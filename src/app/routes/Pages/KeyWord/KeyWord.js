@@ -37,9 +37,11 @@ export default class KeyWord extends Component {
 		const header = { headers: { Authorization: localStorage.getItem('Authorization') } }
         //const id = this.state.opportunityIdSelector.id ? this.state.opportunityIdSelector.id : 0;
         // const id = this.state.opportunityIdSelector ? this.state.opportunityIdSelector : 0;
-        const response = await API.get( `/keyWord/opportunity/${this.state.opportunityIdSelector.value}`, header )
+        // eslint-disable-next-line 
+        const response = await API.get( `/keyWord/opportunity/${opportunityIdSelector.value}`, header )
         this.setState( { listKeyWords: response.data } )
         // console.log('listKeyWords: ', this.state.listKeyWords)
+        console.log("opportunityIdSelector " + this.state.opportunityIdSelector)
     }    
 
     changeValuesState( evt ) {
